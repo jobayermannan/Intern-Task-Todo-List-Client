@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { addTask } from '../api/api.js';
-
+import { addTask } from '../api/api';
+import { toast } from 'react-toastify';
 
 const TaskForm = ({ onAdd }) => {
   const [name, setName] = useState('');
@@ -8,10 +8,17 @@ const TaskForm = ({ onAdd }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newTask = await addTask({ name, description });
-    onAdd(newTask);
-    setName('');
-    setDescription('');
+    try {
+      const newTask = await addTask({ name, description, status: false });
+      onAdd(newTask);
+      setName('');
+      setDescription('');
+      toast.success('Task added successfully!', {
+        icon: '✅',
+      });
+    } catch (error) {
+      toast.error('Failed to add task.');
+    }
   };
 
   return (

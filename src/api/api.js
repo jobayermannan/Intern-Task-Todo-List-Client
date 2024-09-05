@@ -12,12 +12,26 @@ export const addTask = async (task) => {
   return response.data;
 };
 
-export const updateTask = async (id, task) => {
-  const response = await axios.put(`${API_URL}/tasks/${id}`, task);
-  return response.data;
+export const updateTask = async (taskId, updatedFields) => {
+  try {
+    const response = await axios.put(`${API_URL}/tasks/${taskId}`, updatedFields, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error updating task:', error);
+    throw error;
+  }
 };
 
-export const deleteTask = async (id) => {
-  const response = await axios.delete(`${API_URL}/tasks/${id}`);
-  return response.data;
+export const deleteTask = async (taskId) => {
+  try {
+    const response = await axios.delete(`${API_URL}/tasks/${taskId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting task:', error);
+    throw error;
+  }
 };
