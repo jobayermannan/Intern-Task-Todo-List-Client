@@ -14,7 +14,7 @@ body {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #2d2d2d; 
+	background-color: #2d2d2d;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
  }
@@ -62,4 +62,18 @@ body {
 	  margin-bottom: 0;
 	  margin-right: 10px;
 	}
+ }
+ 
+ /* New styles for the task list container */
+ .task-list-container {
+	padding: 20px;
+	background: #2d2d2d; /* Match the background color */
+	border-radius: 10px; /* Match the border radius */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Match the box shadow */
+ }
+ 
+ .task-list {
+	max-height: 50vh; /* Adjust the height as needed */
+	overflow-y: auto;
+	margin-top: 20px;
  }

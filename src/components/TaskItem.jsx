@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { deleteTask, updateTask } from '../api/api';
 import { toast } from 'react-toastify';
+import Modal from './modal/Modal';
 
 const TaskItem = ({ task, onUpdate, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -11,7 +12,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
     try {
       const updatedTask = await updateTask(task._id, { ...task, status: !task.status });
       onUpdate(updatedTask);
-      toast.success('Task status updated!', {
+      toast.success(`Task is ${!task.status ? 'completed' : 'incomplete'}!`, {
         icon: '✅',
       });
     } catch (error) {
@@ -51,30 +52,28 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
         checked={task.status}
         onChange={handleStatusChange}
       />
-      {isEditing ? (
-        <>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <button onClick={handleEdit}>Save</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
-        </>
-      ) : (
-        <>
-          <span style={{ textDecoration: task.status ? 'line-through' : 'none' }}>
-            {task.name}: {task.description}
-          </span>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
-        </>
-      )}
+      <span style={{ textDecoration: task.status ? 'line-through' : 'none' }}>
+        {task.name}: {task.description}
+      </span>
+      <button onClick={() => setIsEditing(true)}>Edit</button>
+      <button onClick={handleDelete}>Delete</button>
+
+      <Modal isOpen={isEditing} onClose={() => setIsEditing(false)} title="Edit Task">
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <textarea
+          className="textarea-margin"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          rows="5"
+          style={{ width: '100%' }}
+        />
+        <button onClick={handleEdit}>Save</button>
+        <button onClick={() => setIsEditing(false)}>Cancel</button>
+      </Modal>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TaskItem from './TaskItem';
 import TaskForm from './TaskForm';
 import { getTasks } from '../api/api';
+import '../styles/styles.css'; // Ensure the CSS file is imported
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -34,7 +35,7 @@ const TaskList = () => {
   });
 
   return (
-    <div className="task-list">
+    <div className="task-list-container">
       <TaskForm onAdd={handleAdd} />
       <div>
         <label htmlFor="filter">Filter tasks: </label>
@@ -44,9 +45,11 @@ const TaskList = () => {
           <option value="incomplete">Incomplete</option>
         </select>
       </div>
-      {filteredTasks.map((task) => (
-        <TaskItem key={task._id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
-      ))}
+      <div className="task-list">
+        {filteredTasks.map((task) => (
+          <TaskItem key={task._id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
+        ))}
+      </div>
     </div>
   );
 };

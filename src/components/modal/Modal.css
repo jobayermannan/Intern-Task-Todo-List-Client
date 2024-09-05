@@ -1,0 +1,49 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal-content {
+	background: #2d2d2d; /* Same as .container background */
+	padding: 20px;
+	border-radius: 10px; /* Same as .container border-radius */
+	width: 500px;
+	max-width: 100%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Same as .container box-shadow */
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #000000;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.modal-close {
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	color: white; /* Ensure the close button is visible on dark background */
+}
+
+.modal-body {
+	padding-top: 20px;
+	max-height: 400px;
+	overflow-y: auto;
+	color: white; /* Ensure the text is visible on dark background */
+}
+
+.textarea-margin {
+  margin-top: 20px; /* Add space between the input and textarea */
+}
