@@ -34,12 +34,15 @@ const TaskList = () => {
   });
 
   return (
-    <div>
+    <div className="task-list">
       <TaskForm onAdd={handleAdd} />
       <div>
-        <button onClick={() => setFilter('all')}>All</button>
-        <button onClick={() => setFilter('completed')}>Completed</button>
-        <button onClick={() => setFilter('incomplete')}>Incomplete</button>
+        <label htmlFor="filter">Filter tasks: </label>
+        <select id="filter" value={filter} onChange={(e) => setFilter(e.target.value)}>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
       </div>
       {filteredTasks.map((task) => (
         <TaskItem key={task._id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />

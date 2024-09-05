@@ -45,7 +45,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
   };
 
   return (
-    <div>
+    <div className="task-item">
       <input
         type="checkbox"
         checked={task.status}
