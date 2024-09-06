@@ -29,15 +29,17 @@ This is the frontend part of the To-Do List application built using React.js. Li
    git clone https://github.com/jobayermannan/Intern-Task-Todo-List-Client.git
   
 	```
-	cd <repository-folder>/client
+
 2. Install dependencies:
 	```sh
 	npm install
 	```
 
 3.create a .env file in the root directory of the project and add the following line:
-	```sh
+	 ```sh
+
 	VITE_API_URL=https://todo-server-task.vercel.app/api
+	
 	```		
 4. start the development server:
 	```sh
