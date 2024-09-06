@@ -25,9 +25,8 @@ This is the frontend part of the To-Do List application built using React.js. Li
 
 ### Setup
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/jobayermannan/Intern-Task-Todo-List-Client.git
-  
+	```sh
+	git clone https://github.com/jobayermannan/Intern-Task-Todo-List-Client.git
 	```
 
 2. Install dependencies:
@@ -35,17 +34,18 @@ This is the frontend part of the To-Do List application built using React.js. Li
 	npm install
 	```
 
-3.create a .env file in the root directory of the project and add the following line:
-	 ```
-VITE_API_URL=https://todo-server-task.vercel.app/api
+3. Create a .env file in the root directory of the project and add the following line:
+	```
+	VITE_API_URL=https://todo-server-task.vercel.app/api
+	```
 
-```		
-4. start the development server:
+4. Start the development server:
 	```sh
 	npm run dev
-	```	
-5.  Running the Application:
+	```
 
-Ensure the backend server is running.
-Ensure the frontend development server is running.
-Open your browser and navigate to http://localhost:3000 to view the application.
+5. Running the Application:
+
+	- Ensure the backend server is running.
+	- Ensure the frontend development server is running.
+	- Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
