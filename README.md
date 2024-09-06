@@ -1,6 +1,6 @@
 # To-Do List Application - Frontend
 
-This is the frontend part of the To-Do List application built using React.js. Live preview of the application is available [here](https://todo-client-task.vercel.app/).
+This is the frontend part of the To-Do List application built using React.js. Live preview of the application is available [here](https://intern-task-todo-list-client.vercel.app/).
 
 ## Requirements
 
