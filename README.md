@@ -30,6 +30,9 @@ This is the frontend part of the To-Do List application built using React.js.
    cd <repository-folder>/client
 VITE_API_URL=https://todo-server-task.vercel.app/api
 	Install frontend dependencies:
+	```bash
+yarn dev
+```
 
 Create a .env file in the client directory and add the API URL:
 
