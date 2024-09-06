@@ -37,10 +37,8 @@ This is the frontend part of the To-Do List application built using React.js. Li
 
 3.create a .env file in the root directory of the project and add the following line:
 	 ```sh
-
-	VITE_API_URL=https://todo-server-task.vercel.app/api
-	
-	```		
+VITE_API_URL=https://todo-server-task.vercel.app/api
+    ```		
 4. start the development server:
 	```sh
 	npm run dev
